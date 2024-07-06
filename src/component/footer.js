@@ -26,7 +26,7 @@ const Footer = () => {
               </Typography>
         </Box>
       <Grid container spacing={2}>
-            <Grid item md={5}>
+            <Grid item lg={5} md={5} sm={12} xs={12}>
              
               <Box my={4}>
                 <Box sx={{ display: 'flex', alignItems: 'start', gap: 2 }}>
@@ -53,7 +53,7 @@ const Footer = () => {
                 </Box>
               </Box>
             </Grid>
-            <Grid item md={7}>
+            <Grid item lg={7} md={7} sm={12} xs={12}>
               <Grid container >
                 {data.map((section, index) => (
                   <Grid item key={index} lg={4} md={4} sm={4} xs={6} my={2}>
