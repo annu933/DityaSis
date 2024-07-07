@@ -38,7 +38,10 @@ function Benefits() {
             <Container maxWidth="xl">
                 <Box
                 >
-                    <Box>
+                    <Box 
+                         px={{ xs: 2, sm: 5, md: 5, lg: 10, xl: 10 }}
+                         py={4}
+                    >
                         <div style={{
                             display: 'flex',
                             justifyContent: 'center',
@@ -78,7 +81,7 @@ function Benefits() {
                                     textAlign: 'center'
                                 }}
 
-                            >Lorem ipsum dolor sit amet consectetur. Cras ut tempus mattis morbi mauris. Proin vel sed consectetur in. In in risus nunc sapien odio habitasse sit <br />risus hendrerit. Et nibh elementum nec enim.</Typography>
+                            >Lorem ipsum dolor sit amet consectetur. Cras ut tempus mattis morbi mauris. Proin vel sed consectetur in. In in risus nunc sapien odio habitasse sit risus hendrerit. Et nibh elementum nec enim.</Typography>
 
 
                         </div>
@@ -102,7 +105,7 @@ function Benefits() {
                     <Grid container
                         spacing={1}
                         my={{ xs: 2, sm: 4, md: 2, lg: 0, xl: 0 }}
-                        px={{ xs: 2, sm: 5, md: 5, lg: 20, xl: 20 }}
+                        px={{ xs: 2, sm: 5, md: 5, lg: 10, xl: 10 }}
                     >
                         {data.map((item) => {
                             return (
@@ -110,7 +113,6 @@ function Benefits() {
                                     <motion.div
                                         whileHover={{
                                             scale: 1.05,
-
 
                                         }}
                                         transition={{ duration: 0.3 }}
@@ -154,9 +156,9 @@ function Benefits() {
                                                 </Box>
                                                 <Typography color="#00366C"
                                                     sx={{
-                                                        fontSize: { lg: '28px', md: '22px', sm: '18px', xs: '16px' },
-                                                        lineHeight: { lg: '42px', md: '35px', sm: '28px', xs: '24px' },
-                                                        fontWeight: 600,
+                                                        fontSize: { lg: '32px', md: '22px', sm: '18px', xs: '16px' },
+                                                        lineHeight: { lg: '40px', md: '35px', sm: '28px', xs: '24px' },
+                                                        fontWeight: 700,
                                                     }}
                                                 >
                                                     {item.name}
@@ -164,8 +166,8 @@ function Benefits() {
                                             </Box>
                                             <Typography color="#64748B"
                                                 sx={{
-                                                    fontSize: { lg: '18px', md: '16px', sm: '14px', xs: '14px' },
-                                                    lineHeight: { lg: '28px', md: '24px', sm: '22px', xs: '24px' },
+                                                    fontSize: { lg: '20px', md: '18px', sm: '14px', xs: '14px' },
+                                                    lineHeight: { lg: '30px', md: '28px', sm: '22px', xs: '24px' },
                                                     fontWeight: 400,
                                                 }}
                                             >
@@ -180,16 +182,6 @@ function Benefits() {
                     </Grid>
                 </Box>
             </Container>
-
-            <motion.div
-                ref={ref}
-                initial={{ opacity: 0, x: 50 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-                transition={{ duration: 0.5 }}
-                style={{ height: '200px', backgroundColor: 'lightblue', margin: '20px 0' }}
-            >
-                This section animates when it comes into view.
-            </motion.div>
         </Box>
     );
 }

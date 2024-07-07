@@ -1,11 +1,15 @@
+"use client"
 import React from 'react';
 import { Box, Container, Typography, Link, Grid, Divider } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import logo from '../../public/image/logo-footer.png';
+import logo from '../../public/logo.png';
 
 const Footer = () => {
+    const handlePhoneIconClick = () => {
+        window.open(`tel:${+916541365911}`);
+      };
   return (
     <Box
       px={{ xs: 2, sm: 2, md: 5, lg: 10, xl: 10 }}
@@ -19,7 +23,14 @@ const Footer = () => {
       <Container maxWidth="xl">
         <Box>
         <Typography variant="h6" sx={{ mb: 2 }}>
+                <Box sx={{
+                  backgroundColor: '#fff',
+                  padding:1,
+                  borderRadius: '5px',
+                  width: '50px',
+                }}>
                 <img src={logo.src} alt="Company Logo" style={{ width: 50, height: 50 }} />
+                </Box>
               </Typography>
               <Typography variant="body1" sx={{ mb: 2 }}>
                 We are a lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... <Link href="#" sx={{ color: 'inherit' }}>Read More</Link>
@@ -33,14 +44,15 @@ const Footer = () => {
                   <PhoneIcon />
                   <Box>
                     <Typography>Call Now</Typography>
-                    <Typography>310-437-2766</Typography>
+                    <Typography sx={{cursor: 'pointer'}}   onClick={handlePhoneIconClick}>310-437-2766</Typography>
                   </Box>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'start', gap: 2,my:3 }}>
                   <EmailIcon />
                   <Box>
+                    
                     <Typography>Email Id</Typography>
-                    <Typography>unreal@outlook.com6</Typography>
+                    <Typography><a href="mailto:abcd@gmail.com" style={{color: '#fff', textDecoration: 'none'}}>abcd@gmail.com</a></Typography>
                   </Box>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'start', gap: 2 }}>

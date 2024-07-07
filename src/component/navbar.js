@@ -1,7 +1,5 @@
 "use client"
 import React, { useState } from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
@@ -14,14 +12,29 @@ import ListItemText from '@mui/material/ListItemText';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import logo from '../../public/logo.png';
-import { Box, Menu, MenuItem } from '@mui/material';
+import { createTheme, ThemeProvider, Box, Menu, MenuItem } from '@mui/material';
 import '../app/globals.css';
+import Link from 'next/link';
 
+
+
+const themeBreakPoint = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 769,
+        md: 900,
+        lg: 1200,
+        xl: 1536,
+        xxl: 2559,
+      },
+    },
+  });
 
 const Navbar = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    // const theme = useTheme();
+    const isMobile = useMediaQuery(themeBreakPoint.breakpoints.down('sm'));
 
     const toggleDrawer = (open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -58,9 +71,9 @@ const Navbar = () => {
 
 
     return (
-        <Box
-            // px={10}
-            px={{ xs: 2, sm: 5, md: 5, lg: 10, xl: 10 }}
+        <ThemeProvider theme={themeBreakPoint}>
+             <Box
+            px={{ xs: 2, sm: 2, md: 2, lg: 2, xl: 10 }}
         >
             <Box position="static" sx={{
                 backgroundColor: 'white', color: 'black',
@@ -78,7 +91,7 @@ const Navbar = () => {
                     <img
                         src={logo.src}
                         alt="Logo"
-                        style={{ height: '40px', marginRight: 'auto' }}
+                        style={{ height: '60px', marginRight: 'auto' }}
                     />
                     {isMobile && (
                         <IconButton
@@ -93,16 +106,20 @@ const Navbar = () => {
                     )}
                     {!isMobile && (
                         <ul className='ul-menu'>
-                             <li color="inherit" className='nav-menu'>
+                                <Link href="/" className='nav-menu'>
+                                <li color="inherit">
                                 <Typography
                                     sx={{
                                         fontSize: { lg: '16px', md: '12px', sm: '12px', xs: '12px' },
                                         lineHeight: '27px',
                                         fontWeight: 500,
-                                        //  paddingRight:{lg:2,md: 0,sm: 0,xs:0}
+                                        color:'#045BB2'
                                     }}>
                                     Home</Typography></li>
+                                </Link>
+                     
                             <li color="inherit" className='nav-menu'>
+
                                 <Typography
                                     sx={{
                                         fontSize: { lg: '16px', md: '12px', sm: '12px', xs: '12px' },
@@ -110,19 +127,28 @@ const Navbar = () => {
                                         fontWeight: 500,
                                         //  paddingRight:{lg:2,md: 0,sm: 0,xs:0}
                                     }}>
-                                    SmartEner Executive Diploma</Typography></li>
+                                    SmartEner Executive Diploma</Typography>
+
+
+                            </li>
                             <li color="inherit" className='nav-menu'><Typography sx={{
                                 fontSize: { lg: '16px', md: '12px', sm: '12px', xs: '12px' },
                                 lineHeight: '27px',
                                 fontWeight: 500,
                                 //  paddingRight:{lg:2,md: 0,sm: 0,xs:0}
                             }}>SmartEnerOur Programs</Typography></li>
-                            <li color="inherit" className='nav-menu'><Typography sx={{
-                                fontSize: { lg: '16px', md: '12px', sm: '12px', xs: '12px' },
-                                lineHeight: '27px',
-                                fontWeight: 500,
-                                //  paddingRight:{lg:2,md: 0,sm: 0,xs:0}
-                            }}>SmartEnerCustomised Training</Typography></li>
+                            <Link href="/training" className='nav-menu'>
+                                <li color="inherit">
+
+                                    <Typography sx={{
+                                        fontSize: { lg: '16px', md: '12px', sm: '12px', xs: '12px' },
+                                        lineHeight: '27px',
+                                        fontWeight: 500,
+                                        //  paddingRight:{lg:2,md: 0,sm: 0,xs:0}
+                                    }}>SmartEnerCustomised Training</Typography>
+
+                                </li>
+                            </Link>
 
                             <li color="inherit" onClick={handleClick} className='nav-menu'>
                                 <Typography sx={{
@@ -141,7 +167,7 @@ const Navbar = () => {
                                 <MenuItem onClick={handleClose} className='nav-menu'>SmartEnerFranchise</MenuItem>
                                 <MenuItem onClick={handleClose} className='nav-menu'>SmartEnerPlacements</MenuItem>
                             </Menu>
-                            <li color="inherit" onClick={handleClick} className='nav-menu'>
+                            <li color="inherit" className='nav-menu'>
                                 <Typography sx={{
                                     fontSize: { lg: '16px', md: '12px', sm: '12px', xs: '12px' },
                                     lineHeight: '27px',
@@ -149,7 +175,7 @@ const Navbar = () => {
                                     //  paddingRight:{lg:2,md: 0,sm: 0,xs:0}
                                 }}>Sign Up</Typography>
                             </li>
-                            <li color="inherit" onClick={handleClick} className='nav-menu'
+                            <li color="inherit" className='nav-menu'
                                 style={{
                                     background: 'linear-gradient(90deg, #387DC2 2.49%, #045BB2 99.71%)',
                                     borderRadius: '20px',
@@ -174,26 +200,28 @@ const Navbar = () => {
                     display: 'flex',
                     padding: '16px'
                 }}>
-                <img
-                    src={logo.src}
-                    alt="Logo"
-                    style={{ height: '40px', marginRight: 'auto' }}
-                />
+                    <img
+                        src={logo.src}
+                        alt="Logo"
+                        style={{ height: '40px', marginRight: 'auto' }}
+                    />
 
-                <IconButton
-                    edge="start"
-                    color="inherit"
-                    aria-label="menu"
-                    sx={{ marginRight: 2 }}
-                    onClick={toggleDrawer(false)}
-                >
-                    <CloseIcon />
-                </IconButton>
+                    <IconButton
+                        edge="start"
+                        color="inherit"
+                        aria-label="menu"
+                        sx={{ marginRight: 2 }}
+                        onClick={toggleDrawer(false)}
+                    >
+                        <CloseIcon />
+                    </IconButton>
                 </Box>
 
                 {drawer}
             </Drawer>
         </Box>
+        </ThemeProvider>
+       
     );
 };
 

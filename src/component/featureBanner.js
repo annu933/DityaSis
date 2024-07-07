@@ -1,12 +1,11 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import feature from '../../public/image/banner.jpg';
-import CustomCard from "@/utils/card/Card";
 
 function FeatureBanner() {
 
     return (
         <Box
-            px={{ xs: 2, sm: 5, md: 5, lg: 10, xl: 10 }}
+            px={{ xs: 0, sm: 5, md: 5, lg: 10, xl: 10 }}
 
             sx={{
                 display: 'flex',
@@ -14,25 +13,17 @@ function FeatureBanner() {
                 alignItems: 'center',
                 backgroundRepeat: 'no-repeat',
                 position: 'absolute',
-                top: {xxl:'-50%',xl: '-25%',lg: '-15%', md: '-40%', sm: '0',xs: 'none'},
+                top: { xxl: '-50%', xl: '-25%', lg: '-15%', md: '-40%', sm: '0%', xs: '0%' },
             }}
         >
-   
+            <Container maxWidth="xl">
                 <Grid container
                     px={{ xs: 0, sm: 5, md: 2, lg: 5, xl: 5 }}
                     py={{ xs: 0, sm: 5, md: 5, lg: 7, xl: 7 }}
                     style={{
                         backgroundRepeat: 'no-repeat',
                     }}
-                    spacing={2}
-                    // sx={{
-                    //     borderRadius: '20px',
-                    //     height: { lg: '300px', md: '400px', sm: 'auto', xs: 'auto' },
-                    //     display: 'flex',
-                    //     justifyContent: 'space-around',
-                    //     alignItems: 'center',
-                    // }}
-
+                    spacing={{lg:2,md:2,sm:1,xs:0}}
                     sx={{
                         width: '100%',
                         display: 'flex',
@@ -44,23 +35,19 @@ function FeatureBanner() {
                         backgroundPosition: 'bottom !important',
                         backgroundRepeat: 'no-repeat !important',
                         borderRadius: '20px',
-
                     }}
                 >
                     {data.map((item) => {
                         return (
                             <Grid item lg={3} md={3} sm={6} xs={12} key={item.name}
-                                sx={{
-                                    // margin:{sm:0,xs:1,md:0,lg:0}
-                                }}
-                            >
+>
                                 <Box
                                     sx={{
                                         backgroundColor: '#E4E4E7',
-                                        padding: '40px 20px',
+                                        padding:  { lg: '40px 20px', md: '40px 20px', sm: '40px 20px',  xs: '15px' },
                                         borderRadius: '20px',
                                         textAlign: 'center',
-                                        margin: { lg: 0, md: 1, sm: 1, md: 0, lg: 0 }
+                                        margin: { lg: 0, md: 1, sm: 1, xs: 1 }
                                     }}
                                 >
                                     <Typography variant="h5" sx={{ fontWeight: 'bold' }} color="#00366C">
@@ -89,9 +76,12 @@ function FeatureBanner() {
                         );
                     })}
                 </Grid>
-        
+            </Container>
+
+
 
         </Box>
+        
     )
 }
 export default FeatureBanner;

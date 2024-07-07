@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Image from 'next/image';
 
 const CustomButton = ({
@@ -42,7 +42,7 @@ const CustomButton = ({
 
   return (
     <Box
-      className="poppins-font"
+      // className="poppins-font"
       sx={{
         width: width,
         backgroundColor: backgroundColor,
@@ -65,7 +65,7 @@ const CustomButton = ({
       <Box sx={{ paddingRight: 1 }}>
         {startIcon && renderStartIcon()}
       </Box>
-      {children}
+      <Typography variant="body2" fontWeight={600}>{children}</Typography>
     </Box>
   );
 };

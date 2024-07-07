@@ -1,5 +1,5 @@
 "use client"
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { createTheme, ThemeProvider, Box, Button, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import mainImage from '../../public/image/heroImg.png';
 import CustomButton from "@/utils/button/button";
@@ -8,15 +8,31 @@ import CustomButton from "@/utils/button/button";
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import useIntersectionObserver from '../hooks/observer';
+
+const theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 900,
+        lg: 1200,
+        xl: 1536,
+        xxl: 2559,
+      },
+    },
+  });
+
 function Banner() {
 
     const ref = useRef();
     const isInView = useIntersectionObserver(ref);
     return (
-        <Box
+
+        <ThemeProvider theme={theme}>
+              <Box
             sx={{
                 width: '100%',
-                height: { xs: '70vh', sm: '70vh', md: '70vh', lg: '100vh' },
+                // height: { xs: '70vh', sm: '70vh', md: '70vh', lg: '100vh',xxl: '100vh' },
                 backgroundImage: 'linear-gradient(256.96deg, #006CD9 1.08%, #004081 100.58%)',
                 display: 'flex',
                 justifyContent: 'center',
@@ -25,7 +41,8 @@ function Banner() {
         >
             <Container maxWidth="xl">
                 <Grid container
-                    px={{ xs: 2, sm: 5, md: 5, lg: 5 }}
+                    px={{ xs: 0, sm: 0, md: 0, lg: 0, xl: 5 }}
+                    height= {{ xxl:'50vh',xl:'100vh',lg: '50vh', md: '35vh', sm: '30vh', xs: '50vh' }}
                 >
                     <Grid item xs={12} md={6} lg={6}
                         sx={{
@@ -40,17 +57,8 @@ function Banner() {
                             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
                             transition={{ duration: 1 }}
                         >
-                            <Box
-                            // sx={{ width: { xxl: '100%', lg: '400px', md: '400px' } }}
-                            >
+                            <Box>
                                 <Typography color="white" gutterBottom className="poppins-font"
-                                    // sx={{
-                                    //     fontSize: {lg: '50px', md: '50px', sm: '30px', xs: '30px'},
-                                    //     lineHeight: {lg: '75px', md: '75px', sm: '40px', xs: '40px'},
-                                    //     fontWeight: 600,
-
-                                    // }}
-
                                     sx={{
                                         fontSize: { lg: '50px', md: '40px', sm: '30px', xs: '25px' },
                                         lineHeight: { lg: '75px', md: '55px', sm: '40px', xs: '32px' },
@@ -63,7 +71,7 @@ function Banner() {
                                     sx={{
                                         fontSize: { lg: '22px', md: '22px', sm: '18px', xs: '16px' },
                                         lineHeight: { lg: '33px', md: '33px', sm: '30px', xs: '24px' },
-                                        fontWeight: '400',
+                                        fontWeight: '400 !important',
                                         width: '90%'
                                     }}
                                 >
@@ -73,12 +81,16 @@ function Banner() {
                                     marginTop: 5
                                 }}>
                                     <CustomButton
-                                        width="120px"
-                                        backgroundImage='linear-gradient(180deg, #F17D10 43.8%, #CD6300 100%)'
-                                        color="#FFFFFF"
-                                        fontSize="15px"
-                                        padding='10px'
-                                        borderRadius="5px"
+                                    sx={{
+                                        width:"120px",
+                                        backgroundImage:'linear-gradient(180deg, #F17D10 43.8%, #CD6300 100%)',
+                                        color:"#FFFFFF",
+                                        fontSize:"15px",
+                                        padding:'10px',
+                                        borderRadius:"5px",
+                                        textAlign:"center",
+                                        cursor: 'pointer',
+                                    }}
                                     >
                                         Explore more
                                     </CustomButton>
@@ -94,10 +106,9 @@ function Banner() {
                         transition={{ duration: 1 }}
                         sx={{
                             background: `url(${mainImage.src})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'top',
+                            backgroundSize:  '100% auto',
+                            backgroundPosition: 'center',
                             backgroundRepeat: 'no-repeat',
-                            height: { lg: '100vh', md: '56vh', sm: '56vh', xs: '56vh' },
                             overflow: 'hidden',
                             display: { xs: 'none', sm: 'none', md: 'flex' },
                             justifyContent: 'center',
@@ -110,6 +121,8 @@ function Banner() {
             </Container>
 
         </Box>
+        </ThemeProvider>
+      
     );
 }
 
