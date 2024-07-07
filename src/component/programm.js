@@ -9,18 +9,18 @@ import about3 from '../../public/image/pro3New.png';
 import CustomCard from "@/utils/card/Card";
 
 
-const themeBreakPoint = createTheme({
-    breakpoints: {
-        values: {
-            xs: 0,
-            sm: 769,
-            md: 900,
-            lg: 1200,
-            xl: 1536,
-            xxl: 2559,
-        },
-    },
-});
+// const themeBreakPoint = createTheme({
+//     breakpoints: {
+//         values: {
+//             xs: 0,
+//             sm: 769,
+//             md: 900,
+//             lg: 1200,
+//             xl: 1536,
+//             xxl: 2559,
+//         },
+//     },
+// });
 
 function Programm() {
 
@@ -38,9 +38,9 @@ function Programm() {
 
  
     return (
-        <ThemeProvider theme={themeBreakPoint}>
+        // <ThemeProvider theme={themeBreakPoint}>
             <Box
-                px={{ xs: 0, sm: 0, md: 0, lg: 0, xl: 5 }}
+                px={{ xs: 0, sm: 0, md: 0, lg: 5, xl: 5 }}
                 py={{ xs: 5, sm: 5, md: 5, lg: 10, xl: 10 }}
                 sx={{
                     height: 'auto',
@@ -114,7 +114,7 @@ function Programm() {
                 </Container>
 
             </Box>
-        </ThemeProvider>
+        // </ThemeProvider>
 
     );
 }

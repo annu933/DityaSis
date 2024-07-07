@@ -41,7 +41,7 @@ function Banner() {
         >
             <Container maxWidth="xl">
                 <Grid container
-                    px={{ xs: 0, sm: 0, md: 0, lg: 0, xl: 5 }}
+                    px={{ xs: 0, sm: 0, md: 0, lg: 5, xl: 5 }}
                     height= {{ xxl:'50vh',xl:'100vh',lg: '50vh', md: '35vh', sm: '30vh', xs: '50vh' }}
                 >
                     <Grid item xs={12} md={6} lg={6}

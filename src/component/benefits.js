@@ -33,13 +33,14 @@ function Benefits() {
 
         }}
             paddingY={{ xs: 5, sm: 5, md: 5, lg: 10, xl: 10 }}
+            px={{ xs: 0, sm: 0, md: 0, lg: 5, xl: 10 }}
 
         >
             <Container maxWidth="xl">
                 <Box
                 >
                     <Box 
-                         px={{ xs: 2, sm: 5, md: 5, lg: 10, xl: 10 }}
+                        //  px={{ xs: 2, sm: 5, md: 5, lg: 10, xl: 10 }}
                          py={4}
                     >
                         <div style={{
@@ -104,8 +105,6 @@ function Benefits() {
                     }}>
                     <Grid container
                         spacing={1}
-                        my={{ xs: 2, sm: 4, md: 2, lg: 0, xl: 0 }}
-                        px={{ xs: 2, sm: 5, md: 5, lg: 10, xl: 10 }}
                     >
                         {data.map((item) => {
                             return (

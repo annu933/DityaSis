@@ -21,8 +21,10 @@ function Testimonial() {
     const isInView = useIntersectionObserver(ref);
     return (
         <Box
-        px={{ xs: 2, sm: 2, md: 5, lg:10,xl:10 }}
-        py={{ xs: 5, sm: 5, md: 5, lg:10,xl:10 }}
+        // px={{ xs: 2, sm: 2, md: 5, lg:10,xl:10 }}
+        // py={{ xs: 5, sm: 5, md: 5, lg:10,xl:10 }}
+        px={{ xs: 0, sm: 0, md: 0, lg: 5, xl: 10 }}
+        py={{ xs: 5, sm: 5, md: 5, lg: 10, xl: 10 }}
             sx={{
                 // height: {lg:'160vh',md:'100vh',sm: 'auto',xs:'auto'},
                 backgroundColor: '#fff',

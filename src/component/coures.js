@@ -24,7 +24,7 @@ function Course() {
 
     return (
         <Box
-        px={{ xs: 0, sm: 0, md: 0, lg: 0, xl: 5 }}
+        px={{ xs: 0, sm: 0, md: 0, lg: 5, xl: 5 }}
         pb={{ xs: 5, sm: 5, md: 5, lg: 10, xl: 10 }}
             sx={{
                 height: 'auto',

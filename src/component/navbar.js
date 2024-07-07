@@ -73,7 +73,7 @@ const Navbar = () => {
     return (
         <ThemeProvider theme={themeBreakPoint}>
              <Box
-            px={{ xs: 2, sm: 2, md: 2, lg: 2, xl: 10 }}
+            px={{ xs: 2, sm: 2, md: 2, lg: 10, xl: 10 }}
         >
             <Box position="static" sx={{
                 backgroundColor: 'white', color: 'black',

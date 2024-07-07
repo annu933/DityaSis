@@ -19,8 +19,11 @@ const Contact = () => {
             }}
         >
             <Box
-                px={{ xs: 2, sm: 2, md: 5, lg: 10, xl: 10 }}
-                py={{ xs: 2, sm: 2, md: 5, lg: 10, xl: 10 }}
+                // px={{ xs: 2, sm: 2, md: 5, lg: 10, xl: 10 }}
+                // py={{ xs: 2, sm: 2, md: 5, lg: 10, xl: 10 }}
+
+                px={{ xs: 0, sm: 0, md: 0, lg: 5, xl: 5 }}
+                py={{ xs: 5, sm: 5, md: 5, lg: 10, xl: 10 }}
             >
                 <Container maxWidth="xl">
                     <Grid
