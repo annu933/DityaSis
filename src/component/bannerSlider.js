@@ -1,5 +1,5 @@
 "use client"
-import { createTheme, ThemeProvider, Box, Button, Container, Grid, Typography } from "@mui/material";
+import { createTheme, ThemeProvider, Box, Button, Container, Grid, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import img1 from '../../public/image/heroImg.png';
 import img2 from '../../public/image/heroImg3.webp';
@@ -92,6 +92,9 @@ function BannerSlider() {
             },
         },
     };
+
+      // const theme = useTheme();
+      const isBigSize = useMediaQuery(theme.breakpoints.down('xxl'));
     return (
 
         <ThemeProvider theme={theme}>
@@ -105,7 +108,10 @@ function BannerSlider() {
                     alignItems: 'center'
                 }}
             >
-                <Container maxWidth="xl">
+                <Container maxWidth="xl" sx={{
+                    paddingRight: '0px !important',
+                }}>
+                <Box sx={{width: '100%'}}>
                     <div className="" style={{ position: 'relative' }}>
                         <div className="" >
                             <Swiper {...thumbs} className="mySwiper" modules={[Navigation]}
@@ -121,7 +127,7 @@ function BannerSlider() {
                                                     // height: { lg: '250px', md: 'auto', sm: 'auto', xs: 'auto' }
                                                 }}>
                                                     <Grid container
-                                                        px={{ xs: 0, sm: 0, md: 0, lg: 5, xl: 5 }}
+                                                        // px={{ xs: 0, sm: 0, md: 0, lg: 5, xl: 5 }}
                                                         height={{ xxl: '50vh', xl: '100vh', lg: '50vh', md: '35vh', sm: '30vh', xs: '70vh' }}
                                                     >
                                                         <Grid item xs={12} md={6} lg={6}
@@ -130,6 +136,7 @@ function BannerSlider() {
                                                                 alignItems: 'center',
 
                                                             }}
+                                                            px={{ xs: 0, sm: 0, md: 0, lg: 5, xl: 5 }}
                                                         >
                                                             {/* <motion.div
                                                                 ref={ref}
@@ -247,8 +254,9 @@ function BannerSlider() {
                         </Box>
                        </Box>
                     </div>
-                </Container>
-
+       
+                </Box>
+         </Container>
             </Box>
         </ThemeProvider>
 
