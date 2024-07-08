@@ -3,9 +3,9 @@ import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import mainImage from '../../public/image/heroImg.png';
 import CustomButton from "@/utils/button/button";
-import about1 from '../../public/image/pro1.jpg';
-import about2 from '../../public/image/pro2.jpg';
-import about3 from '../../public/image/pro3.jpg';
+import about1 from '../../public/image/pro1New.png';
+import about2 from '../../public/image/pro2New.png';
+import about3 from '../../public/image/pro3New.png';
 import CustomCard from "@/utils/card/Card";
 
 function Course() {
@@ -24,8 +24,8 @@ function Course() {
 
     return (
         <Box
-        px={{xs:2,sm:5,md:5,lg:5}}
-        pb={{xs:2,sm:5,md:5,lg:10}}
+        px={{ xs: 0, sm: 0, md: 0, lg: 5, xl: 5 }}
+        pb={{ xs: 5, sm: 5, md: 5, lg: 10, xl: 10 }}
             sx={{
                 height: 'auto',
                 backgroundColor: '#F8F8F8',
@@ -54,11 +54,12 @@ function Course() {
                            Courses
                         </CustomButton>
                     </Box>
-                    <Typography color="black" gutterBottom 
+                    <Typography color="black" gutterBottom  className="poppins-font"
                     sx={{
                         fontSize: { lg: '45px', md: '45px', sm: '30px', xs: '22px' },
                         lineHeight: { lg: '75px', md: '75px', sm: '40px', xs: '32px' },
                         textAlign : 'center',
+                        fontWeight: 500,
                     }}
                     >
                     Top Certifications Courses in Product Design

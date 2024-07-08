@@ -11,13 +11,20 @@ import { useEffect, useMemo, useState } from "react";
 
 
 import TestimonialCard from "./testimonialCard";
+import { useRef } from 'react';
+import { motion } from 'framer-motion';
+import useIntersectionObserver from '../hooks/observer';
+
 
 function Testimonial() {
-
+    const ref = useRef();
+    const isInView = useIntersectionObserver(ref);
     return (
         <Box
-        px={{ xs: 2, sm: 2, md: 5, lg:10,xl:10 }}
-        py={{ xs: 5, sm: 5, md: 5, lg:10,xl:10 }}
+        // px={{ xs: 2, sm: 2, md: 5, lg:10,xl:10 }}
+        // py={{ xs: 5, sm: 5, md: 5, lg:10,xl:10 }}
+        px={{ xs: 0, sm: 0, md: 0, lg: 5, xl: 10 }}
+        py={{ xs: 5, sm: 5, md: 5, lg: 10, xl: 10 }}
             sx={{
                 // height: {lg:'160vh',md:'100vh',sm: 'auto',xs:'auto'},
                 backgroundColor: '#fff',
@@ -81,17 +88,26 @@ function Testimonial() {
                                 height: '400px',
                                 position: 'relative',
                                 objectFit: 'center',
-                                borderRadius: '14px'
+                                borderRadius: '14px',
+                                margin:1
                             }}
                         >
                             <Image src={testimonial.src} 
                             fill
-                            style={{objectFit:"cover"}}
-                            borderRadius="14px" alt="testimonial" />
+                            style={{objectFit:"cover",borderRadius:"14px"}}
+                             alt="testimonial" 
+                    
+                         />
                         </Box>
                 </Grid>
                 <Grid item lg={6} md={6} sm={12} xs={12}>
-                    <Box sx={{
+                <motion.div
+                                        ref={ref}
+                                        initial={{ opacity: 0, x: -100 }}
+                                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+                                        transition={{ duration: 0.80 }}
+                                    >
+                                          <Box sx={{
                         padding:{lg:5,md:5,sm:2,xs:2}
                     }}
                     
@@ -105,7 +121,7 @@ function Testimonial() {
                              sx={{
                                 fontSize: { lg: '16px', md: '16px', sm: '14px', xs: '14px' },
                                 lineHeight: { lg: '24px', md: '24px', sm: '22px', xs: '22px' },
-                                fontWeight: 500,
+                                fontWeight: 400,
                             }}
                         >
                             Lorem ipsum dolor sit amet consectetur. Pellentesque venenatis commodo odio sed tellus justo morbi diam. In nisi vitae nibh in purus mauris suscipit nullam. Venenatis velit mattis arcu vivamus scelerisque nulla consectetur nibh id. Vel amet et purus id pellentesque. Molestie tincidunt tortor sagittis sed diam massa enim porta.
@@ -127,6 +143,8 @@ function Testimonial() {
                         >Lead designer</Typography>
                     </Box>
                     </Box>
+                                    </motion.div>
+                  
                 </Grid>
             </Grid>
 

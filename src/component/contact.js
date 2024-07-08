@@ -1,3 +1,4 @@
+"use client"
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 // import contact from "../app/image/contact.js"
@@ -7,6 +8,9 @@ import EmailIcon from '@mui/icons-material/Email';
 
 
 const Contact = () => {
+    const handlePhoneIconClick = () => {
+        window.open(`tel:${+916541365911}`);
+      };
     return (
         <Box
             sx={{
@@ -15,8 +19,11 @@ const Contact = () => {
             }}
         >
             <Box
-                px={{ xs: 2, sm: 2, md: 5, lg: 10, xl: 10 }}
-                py={{ xs: 2, sm: 2, md: 5, lg: 10, xl: 10 }}
+                // px={{ xs: 2, sm: 2, md: 5, lg: 10, xl: 10 }}
+                // py={{ xs: 2, sm: 2, md: 5, lg: 10, xl: 10 }}
+
+                px={{ xs: 0, sm: 0, md: 0, lg: 5, xl: 5 }}
+                py={{ xs: 5, sm: 5, md: 5, lg: 10, xl: 10 }}
             >
                 <Container maxWidth="xl">
                     <Grid
@@ -58,7 +65,7 @@ const Contact = () => {
                                         sx={{
                                             fontSize: { lg: '20px', md: '20px', sm: '16px', xs: '14px' },
                                             lineHeight: { lg: '30px', md: '30px', sm: '24px', xs: '24px' },
-                                         fontWeight: 'lighter',
+                                         fontWeight: 400,
                                             my: 2
                                         }}
                                     >Our academic experts will answer all your questions over a <br /> quick phone call.</Typography>
@@ -72,8 +79,10 @@ const Contact = () => {
                                                 <Typography component='span'
                                                     sx={{
                                                         fontWeight: 600,
-                                                        paddingLeft: 2
+                                                        paddingLeft: 2,
+                                                        cursor:'pointer',
                                                     }}
+                                                    onClick={handlePhoneIconClick}
                                                 >
                                                     +916541365911
                                                 </Typography> </Typography>
@@ -87,9 +96,11 @@ const Contact = () => {
                                                 <Typography component='span'
                                                     sx={{
                                                         fontWeight: 600,
-                                                        paddingLeft: 2
+                                                        paddingLeft: 2,
+                                                        cursor:'pointer',
+                                                       
                                                     }}
-                                                > abcd@gmail.com</Typography>
+                                                ><a href="mailto:abcd@gmail.com" style={{color: '#fff', textDecoration: 'none'}}>abcd@gmail.com</a> </Typography>
                                             </Typography>
 
                                         </Box>
@@ -98,19 +109,6 @@ const Contact = () => {
                             </Box>
                         </Grid>
                         <Grid item lg={5} md={5} sm={6} xs={12}
-                            // sx={{
-                            //     background: `url(${contact.src})`,
-                            //     backgroundSize: 'cover',
-                            //     backgroundPosition: 'center',
-                            //     backgroundRepeat: 'no-repeat',
-                            //     height: { sm: 'auto', md: '50vh' },
-                            //     overflow: 'hidden',
-                            //     display: { sm: 'none', md: 'flex' },
-                            //     justifyContent: 'start',
-                            //     alignItems: 'start',
-                            //     borderRadius: '15px',
-
-                            // }}
                             padding={2}
                         >
                             <Box
