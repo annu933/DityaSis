@@ -12,6 +12,7 @@ const themeBreakPoint = createTheme({
     breakpoints: {
         values: {
             xs: 0,
+            xxs: 412,
             sm: 769,
             md: 900,
             lg: 1200,
@@ -110,7 +111,7 @@ function Feature() {
                     justifyContent: 'center',
                     alignItems: 'center',
                     
-                    height: { xs: '70vh',sm: '50vh',md: '20vh',lg: '30vh',xl: '50vh' },
+                    height: { xs: '100vh',xxs:'60vh',sm: '30vh',md: '20vh',lg: '30vh',xl: '40vh' },
                     // padding: { xxl: 0, lg: '40px 0', md: 0, sm: 0, xs: '40px 0' },
                     zIndex: 1000,
                 }}>

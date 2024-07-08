@@ -19,7 +19,7 @@ function FeatureBanner() {
             <Container maxWidth="xl">
                 <Grid container
                     px={{ xs: 0, sm: 5, md: 2, lg: 5, xl: 5 }}
-                    py={{ xs: 0, sm: 5, md: 5, lg: 7, xl: 7 }}
+                    py={{ xs: 5, sm: 5, md: 5, lg: 7, xl: 7 }}
                     style={{
                         backgroundRepeat: 'no-repeat',
                     }}
@@ -78,10 +78,8 @@ function FeatureBanner() {
                 </Grid>
             </Container>
 
-
-
         </Box>
-        
+
     )
 }
 export default FeatureBanner;

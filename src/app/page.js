@@ -1,5 +1,6 @@
 import About from "@/component/about";
 import Banner from "@/component/banner";
+import BannerSlider from "@/component/bannerSlider";
 import Benefits from "@/component/benefits";
 import Contact from "@/component/contact";
 import Course from "@/component/coures";
@@ -14,7 +15,8 @@ export default function Home() {
   return (
     <Box>
 
-      <Banner />
+      {/* <Banner /> */}
+      <BannerSlider />
       <About />
       <Programm />
       <Course />
