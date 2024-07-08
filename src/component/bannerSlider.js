@@ -122,7 +122,7 @@ function BannerSlider() {
                                                 }}>
                                                     <Grid container
                                                         px={{ xs: 0, sm: 0, md: 0, lg: 5, xl: 5 }}
-                                                        height={{ xxl: '50vh', xl: '100vh', lg: '50vh', md: '35vh', sm: '30vh', xs: '50vh' }}
+                                                        height={{ xxl: '50vh', xl: '100vh', lg: '50vh', md: '35vh', sm: '30vh', xs: '70vh' }}
                                                     >
                                                         <Grid item xs={12} md={6} lg={6}
                                                             sx={{
@@ -217,11 +217,11 @@ function BannerSlider() {
                                 borderRadius: '50%',
 
                                 position: 'absolute',
-                                top: '85%',
+                                top: { lg: '85%', md: '90%', sm: '85%' , xs: '85%' },
                                 transform: 'translateY(-50%)',
                                 zIndex: 10,
                                 cursor: 'pointer',
-                                left: { lg: '50px', md: '-50px', sm: '-35px', xs: '-35px' },
+                                left: { lg: '50px', md: '10px', sm: '10px', xs: '10px'},
                             }}
                         >
                             <ArrowBackIosIcon sx={{ color: 'black', fontSize: '15px', margin: 'auto', width: '15px', height: '15px' }} />
@@ -235,12 +235,12 @@ function BannerSlider() {
                                 border: '1px solid #EDEDED',
                                 borderRadius: '50%',
                                 position: 'absolute',
-                                top: '85%',
+                                top: { lg: '85%', md: '90%', sm: '85%' , xs: '85%' },
                                 transform: 'translateY(-50%)',
                                 zIndex: 10,
                                 cursor: 'pointer',
                                 // right: { lg: '-50px', md: '-50px', sm: '-35px', xs: '-35px' },
-                                left: { lg: '100px', md: '-50px', sm: '-35px', xs: '-35px' },
+                                left: { lg: '100px', md: '50px', sm: '50px' , xs: '50px' },
                             }}
                         >
                             <ArrowForwardIosIcon sx={{ color: 'black', fontSize: '15px', margin: 'auto', width: '15px', height: '15px' }} />
