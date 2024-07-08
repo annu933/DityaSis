@@ -3,9 +3,10 @@ import { createTheme, ThemeProvider, Box, Button, Container, Grid, Typography } 
 import Image from "next/image";
 import mainImage from '../../public/image/heroImg.png';
 import CustomButton from "@/utils/button/button";
-import about1 from '../../public/image/pro1New.png';
-import about2 from '../../public/image/pro2New.png';
-import about3 from '../../public/image/pro3New.png';
+import img1 from '../../public/image/pro1.png';
+import img2 from '../../public/image/pro2.png';
+import img3 from '../../public/image/pro3.png';
+import img4 from '../../public/image/pro4.png';
 import CustomCard from "@/utils/card/Card";
 
 
@@ -123,9 +124,9 @@ export default Programm;
 
 const data = [
     {
-        name: 'Industry 4.0',
+        name: 'Turbo generator and Excitation System',
         description: 'Project based assessment | World-class courseware | Industry recognized certificate | Placement support',
-        image: about1.src,
+        image: img1.src,
         button1: {
             name: '160 hrs',
             icon: 'icon-name' // Replace 'icon-name' with the actual icon name or path
@@ -137,9 +138,9 @@ const data = [
         button3: 'Know More'
     },
     {
-        name: 'AR/VR Technology',
+        name: 'Structural Engineer',
         description: 'Project based assessment | World-class courseware | Industry recognized certificate | Placement support',
-        image: about2.src,
+        image: img2.src,
         button1: {
             name: '160 hrs',
             icon: 'icon-name' // Replace 'icon-name' with the actual icon name or path
@@ -151,9 +152,9 @@ const data = [
         button3: 'Know More'
     },
     {
-        name: 'Block Chain Technology',
+        name: 'Mechanical engineer manager',
         description: 'Project based assessment | World-class courseware | Industry recognized certificate | Placement support',
-        image: about3.src,
+        image: img3.src,
         button1: {
             name: '160 hrs',
             icon: 'icon-name' // Replace 'icon-name' with the actual icon name or path
@@ -165,9 +166,9 @@ const data = [
         button3: 'Know More'
     },
     {
-        name: 'Electromagnetics.',
+        name: 'Cybersecurity Analytics',
         description: 'Project based assessment | World-class courseware | Industry recognized certificate | Placement support',
-        image: about2.src,
+        image: img4.src,
         button1: {
             name: '160 hrs',
             icon: 'icon-name' // Replace 'icon-name' with the actual icon name or path
