@@ -111,3 +111,22 @@ h1,h2,h3,h4,h5,h6,p {
 }
 
 /* -------------end-testimonial----------------- */
+
+/* customize training */
+
+.swiper-slide-active .customize-card {
+  padding: 20px;
+  background-color: white;
+  color: white;
+  transition: background-color 0.3s ease-in-out; 
+  border-radius: 10px;
+}
+.swiper-slide-active .customize-card .description , .swiper-slide-active .polygon{
+  display: block !important;
+}
+.swiper-slide .description , .swiper-slide .polygon{
+  display: none;
+}
+.swiper-slide-customize{
+  width: 800px;
+}
